@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Match-Creation Events</title>
+</head>
+<body>
+	{% if user_id %}
+	<p>User-ID: {{ user_id }}</p>
+	{% endif %}
+	<form method="POST">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username">
+		<button type="submit">Suchen</button>
+	</form>
+	{% if error %}
+	<p>{{ error }}</p>
+	{% endif %}
+	<h1>Match-Creation Events</h1>
+	{% for match in matches %}
+	<p>{{ match }}</p>
+	{% endfor %}
+</body>
+</html>

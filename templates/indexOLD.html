@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Benutzereingabe</title>
+</head>
+<body>
+	{% if sniping_status %}
+    <p>"{{ sniping_status }}"</p>
+    {% endif %}
+	<form method="POST" action="/submit-form">
+		<label for="username">Suche ID mit Username:</label>
+		<input type="text" id="username" name="username">
+		<input type="submit" value="Suche">
+	</form>
+    {% if result %}
+    <p>The Faceit Player ID for "{{ result['username'] }}" is "{{ result['player_id'] }}".</p>
+    {% endif %}
+	<br>
+	<br>
+	<form method="POST" action="/sniping">
+		<label for="sniper_id">Sniper-ID:</label>
+		<input type="text" id="sniper_id" name="sniper_id">
+
+		<label for="target_id">Target-ID:</label>
+		<input type="text" id="target_id" name="target_id">
+
+		<input type="submit" value="Snipe">
+	</form>
+	<br>
+
+	
+	
+
+</body>
+</html>
